@@ -548,7 +548,7 @@
         </div>
 
         <div class="col-md-6 odd">
-          <h4 style="text-align:center;color:white;font-size:medium;background-color: #274E13;" class="badge text-wrap">50%</h4><b>- {{callodd|length }}</b>
+          <h4 style="text-align:center;color:white;font-size:medium;background-color: #274E13;" class="badge text-wrap">50%</h4><b>- {{callodd_two|length }}</b>
 
           <div class="fixTableHead">
           
@@ -557,7 +557,7 @@
             <nav aria-label="breadcrumb">
 
               <ul class="list-group">
-              {% for value in callodd %}
+              {% for value in callodd_two %}
               <!-- <b class="badge badge-success">{{ value.symbol }}</b> -->
               <li style="font-size:13px;padding:0px;align-content:left;" class="list-group-item"> <button type="button" id="1" name="1" class="btn btn-outline-secondary" value="{{ value.symbol }}"><b>{{ value.symbol }}</b></button>   |
                 <b class="badge badge-info">{{ value.section }}</b> |  
@@ -628,7 +628,7 @@
         </div>
         </div>
         <div class="col-md-6 even">
-          <h4 style="text-align:center;color:white;font-size:medium;background-color: #274E13;" class="badge text-wrap">50%</h4><b>- {{calleven|length }}</b>
+          <h4 style="text-align:center;color:white;font-size:medium;background-color: #274E13;" class="badge text-wrap">50%</h4><b>- {{calleven_two|length }}</b>
       
           <div class="fixTableHead">
           
@@ -639,7 +639,7 @@
 
 
               <ul class="list-group" style="align-content: flex-start;">
-                {% for value in calleven %}
+                {% for value in calleven_two %}
                 <li style="font-size:13px;padding:0px;align-content:left;" class="list-group-item"><button type="button" id="1" name="1" class="btn btn-outline-danger" value="{{ value.symbol }}"><b>{{ value.symbol }}</b></button> |
                   <b class="badge badge-info">{{ value.section }}</b> |  
                   <!-- <span class="top" style="text-align:center"><b>{{ value.difference }}</b></span> -->
@@ -714,7 +714,7 @@
         </div>
         </div>
         <div class="col-md-6 odd">
-          <h2 style="text-align:center;color:white;font-size:medium;background-color: #660000;" class="badge text-wrap">50%</h2><b>- {{putodd|length}}</b>
+          <h2 style="text-align:center;color:white;font-size:medium;background-color: #660000;" class="badge text-wrap">50%</h2><b>- {{putodd_two|length}}</b>
 
           <div class="fixTableHead">
           
@@ -723,7 +723,7 @@
             <nav aria-label="breadcrumb">
 
               <ul class="list-group">
-              {% for value in putodd %}
+              {% for value in putodd_two %}
 
 
               <li style="font-size:13px;padding:0px;align-content:left;" class="list-group-item"><button type="button" id="1" name="1" class="btn btn-outline-danger" value="{{ value.symbol }}"><b>{{ value.symbol }}</b></button> |
@@ -798,7 +798,7 @@
         </div>
         </div>
         <div class="col-md-6 even">
-          <h2 style="text-align:center;color:white;font-size:medium;background-color: #660000;" class="badge text-wrap">50%</h2><b>- {{puteven|length}}</b>
+          <h2 style="text-align:center;color:white;font-size:medium;background-color: #660000;" class="badge text-wrap">50%</h2><b>- {{puteven_two|length}}</b>
 
           <div class="fixTableHead">
           
@@ -807,7 +807,7 @@
             <nav aria-label="breadcrumb">
 
               <ul class="list-group">
-              {% for value in puteven %}
+              {% for value in puteven_two %}
               <li style="font-size:13px;padding:0px;align-content:left;" class="list-group-item"><button type="button" id="1" name="1" class="btn btn-outline-secondary" value="{{ value.symbol }}"><b>{{ value.symbol }}</b></button> |
                 <b class="badge badge-info">{{ value.section }}</b> |  
                 <!-- <span class="top" style="text-align:center"><b>{{ value.difference }}</b></span> -->

@@ -631,6 +631,12 @@ def equity(request):
     puteven = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=False,change_perc__lte = -3).filter(strike="Put 1 percent").order_by('section')  
     putodd = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=True,change_perc__lte = -3).filter(strike="Put 1 percent").order_by('section') 
 
+    calleven_two = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=False,change_perc__gte = 3).filter(strike="Call 1 percent").order_by('section')  
+    callodd_two = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=True,change_perc__gte = 3).filter(strike="Call 1 percent").order_by('section') 
+    puteven_two = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=False,change_perc__lte = -3).filter(strike="Put 1 percent").order_by('section')  
+    putodd_two = LiveEquityResult.objects.annotate(odd=F('section') % 2).filter(odd=True,change_perc__lte = -3).filter(strike="Put 1 percent").order_by('section') 
+
+
     call_result_odd_count =  len(callodd) + len(callCrossed_odd)
     call_result_even_count = len(calleven) + len(callCrossed_even)
     put_result_odd_count =  len(putodd) + len(putCrossed_odd)
@@ -646,7 +652,7 @@ def equity(request):
     current_time = LiveSegment.objects.order_by('time')[:1]
     equity_timing = current_time[0].time
 
-    return render(request,"equity.html",{'equity_timing':equity_timing,'three_list':three_list,'callCrossed_odd':callCrossed_odd,'callCrossed_even':callCrossed_even,'putCrossed_even':putCrossed_even,'putCrossed_odd':putCrossed_odd,'puteven':puteven,'putodd':putodd,'put_result_even_count':put_result_even_count,'put_result_odd_count':put_result_odd_count,'call_result_even_count':call_result_even_count,'call_result_odd_count':call_result_odd_count,'callodd':callodd,'calleven':calleven,'gain':gain,'loss':loss,'OITotalValue': OITotalValue,'OIChangeValue': OIChangeValue,'value1':value1,'value2':value2,'strikeGap':strikeGap,'callOnePercent':callOnePercent,'putOnePercent':putOnePercent,'putHalfPercent':putHalfPercent,'callHalfPercent':callHalfPercent})
+    return render(request,"equity.html",{'calleven_two':calleven_two,'callodd_two':callodd_two,'puteven_two':puteven_two,'putodd_two':putodd_two,'equity_timing':equity_timing,'three_list':three_list,'callCrossed_odd':callCrossed_odd,'callCrossed_even':callCrossed_even,'putCrossed_even':putCrossed_even,'putCrossed_odd':putCrossed_odd,'puteven':puteven,'putodd':putodd,'put_result_even_count':put_result_even_count,'put_result_odd_count':put_result_odd_count,'call_result_even_count':call_result_even_count,'call_result_odd_count':call_result_odd_count,'callodd':callodd,'calleven':calleven,'gain':gain,'loss':loss,'OITotalValue': OITotalValue,'OIChangeValue': OIChangeValue,'value1':value1,'value2':value2,'strikeGap':strikeGap,'callOnePercent':callOnePercent,'putOnePercent':putOnePercent,'putHalfPercent':putHalfPercent,'callHalfPercent':callHalfPercent})
 
 #5 Option chain Section - selected symbol calculation
 def optionChain(request):

@@ -221,7 +221,7 @@ class SuperLiveSegment(models.Model):
     change_perc = models.FloatField(default=0)
 
     def __str__(self):
-        return self.symbol+" "+self.segment+" "+self.date
+        return self.symbol+" "+self.segment
 
     class Meta:
 
