@@ -302,7 +302,6 @@ def create_currency():
         # value2 = LiveOITotal.objects.all()
         # print("Before changev")
         OIChangeValue = OIChange(df,item,dte)
-        print("after change")
         
         OITotalValue = OITotal(df,item,dte)
 
@@ -330,11 +329,11 @@ def create_currency():
         newDict = {}
         # for key,value in FutureData.items():
         # Call 1 percent 
-        callone = float(OITotalValue['cestrike']) - (float(strikeGap))*0.1
+        callone = float(OITotalValue['cestrike']) - (float(strikeGap))
         # Call 1/2 percent 
         callhalf = float(OITotalValue['cestrike']) - (float(strikeGap))*0.05
         # Put 1 percent
-        putone = float(OITotalValue['pestrike']) + (float(strikeGap))*0.1
+        putone = float(OITotalValue['pestrike']) + (float(strikeGap))
         # Put 1/2 percent
         puthalf = float(OITotalValue['pestrike']) + (float(strikeGap))*0.05
 
