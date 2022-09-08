@@ -329,11 +329,11 @@ def create_currency():
         newDict = {}
         # for key,value in FutureData.items():
         # Call 1 percent 
-        callone = float(OITotalValue['cestrike']) - (float(strikeGap))
+        callone = float(OITotalValue['cestrike']) - (float(strikeGap))*2
         # Call 1/2 percent 
         callhalf = float(OITotalValue['cestrike']) - (float(strikeGap))*0.05
         # Put 1 percent
-        putone = float(OITotalValue['pestrike']) + (float(strikeGap))
+        putone = float(OITotalValue['pestrike']) + (float(strikeGap))*2
         # Put 1/2 percent
         puthalf = float(OITotalValue['pestrike']) + (float(strikeGap))*0.05
 
